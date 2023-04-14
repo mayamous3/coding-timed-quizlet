@@ -1,0 +1,79 @@
+* {
+}
+
+body {
+    font-size: 30px;
+    font-family: sans-serif;
+    color: midnightblue;
+    background-color: aliceblue;
+
+  }
+
+h1,
+h3 {
+    text-align: center;
+  }
+h1 {
+    color: crimson;   
+}
+
+.Start {
+    background-color: midnightblue;
+    border:0;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    letter-spacing: 0.21px;
+    line-height: 16px;
+    max-width: 255px;
+    padding: 20px 52px;
+    text-align: center;
+    transition-duration: 0.15s;
+    transition-property: background-color;
+    transition-timing-function: linear;
+    margin: 0.6em auto;
+    display: block;
+  }
+
+  .End {
+    background-color: midnightblue;
+    border:0;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    letter-spacing: 0.21px;
+    line-height: 16px;
+    max-width: 255px;
+    padding: 20px 52px;
+    text-align: center;
+    transition-duration: 0.15s;
+    transition-property: background-color;
+    transition-timing-function: linear;
+    margin: 0.6em auto;
+    display: block;
+  }
+
+  .option{
+    border-radius: 200px;
+    border: 0px;
+    border-style: solid;
+    font-weight:bold;
+    font-size: .75em;
+    line-height: 24px;
+    padding: 3px 6px;
+    letter-spacing: 2px;
+    background-color: midnightblue;
+    color:ghostwhite;
+  }
+
+  .quizlet {
+    display: block;
+    background-color:ghostwhite;
+    border: 0px;
+    border-radius: 8px;
+    margin: 40px auto;
+    padding: 20px;
+    width: 60vw;
+  }
