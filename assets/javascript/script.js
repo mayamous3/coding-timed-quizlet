@@ -43,6 +43,8 @@ const scoreElement = document.getElementById('pointTotal');
 const initialsInput = document.getElementById('initialsInput');
 const submitButton = document.getElementById('submitButton');
 const pastElement = document.getElementById('pastScore');
+const remainder = document.getElementById('remainder');
+const accrual = document.getElementById('accrual');
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -97,8 +99,11 @@ function handleAnswerClick(event) {
 
 // Function to start the quiz
 function startQuiz() {
+    quizContainer.style.display = 'block';
     startButton.style.display = 'none';
     endButton.style.display = 'inline';
+    remainder.style.display = 'inline';
+    accrual.style.display = 'inline';
     timerElement.textContent = '90';
     scoreElement.textContent = '0';
     displayQuestion();
@@ -138,7 +143,7 @@ function submitQuiz() {
 
     const quizAttempt = {
         date: new Date().toLocaleString(),
-        initials: initials,
+        initials: initialsInput.value.trim(),
         score: score
     };
 

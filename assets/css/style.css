@@ -30,6 +30,32 @@ h1 {
   width:75%;
   margin-left: 12.5%;
 }
+#pastScore {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#initialsInput {
+  border: 2px solid midnightblue;
+  border-radius: 6px;
+  height: 30px;
+}
+
+#submitButton {
+  background-color: midnightblue;
+  border:0;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  height: 30px;
+  max-width: 255px;
+  text-align: center;
+  transition-duration: 0.15s;
+  transition-property: background-color;
+  transition-timing-function: linear;
+}
 
 .scorecard {
   display: flex;

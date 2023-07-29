@@ -12,18 +12,18 @@
     <p class="overview">This quiz will ask 5 questions about JavaScript. For each wrong answer, 10 points and 10 seconds are deducted from the player. Starting timer is 90 seconds and counting down. </p>
     <div class="scorecard" id="scoreCard">
         <div class="countDown">
-            <h3>Time Remaining: </h3>
+            <h3 id="remainder" style="display: none;">Time Remaining: </h3>
             <div id="timer"> </div>
         </div>
         <div class="pointCount">
-            <h3>Accrued Point Total: </h3>
+            <h3 id="accrual" style="display: none;">Accrued Point Total: </h3>
             <div id="pointTotal"> </div>
         </div>
     </div>
-    <div class="quizlet" id="quizzy"> </div>
+    <div class="quizlet" id="quizzy" style="display: none;" > </div>
     <div class="buttons">
         <button class="start" id="startButton">Start</button>
-        <button class="end" id="endButton">End</button>
+        <button class="end" id="endButton" style="display: none;">End</button>
     </div>
     <div class="submitScore">
     <input type="text" id="initialsInput" style="display: none;" placeholder="Enter initials">

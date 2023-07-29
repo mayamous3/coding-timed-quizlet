@@ -17,18 +17,20 @@ WHEN the game is over
 THEN I can save my initials and my score
 ```
 
-## Solutions Implemented
+## Accomplishments
 
 - Quiz will cycle through 5 JavaScript Questions.
 - Quiz uses a timer.
 - Quiz adds 20 points for correct answers, and reduces by 10 points for wrong answers.
 - Time will be reduced by 10 seconds for each wrong answer.
 - Quiz allows player to save their score and initials at the end of the quiz.
+- These past scores persist via local storage.
 
 ## Sources
 https://simplestepscode.com/javascript-quiz-tutorial/
 
 ## Deployed Preview
+![codingquiz](./assets/images/codingquiz.png)
 
 ## Author
 View my other projects here! 
