@@ -111,6 +111,7 @@ function endQuiz() {
     quizContainer.innerHTML = '<p>Quiz Completed!</p>';
     scoreElement.textContent = `${score}`;
     endButton.style.display = 'none';
+    initialsInput.style.display = 'inline';
     submitButton.style.display = 'inline';
 
 
