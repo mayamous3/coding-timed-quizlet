@@ -40,11 +40,15 @@ const endButton = document.getElementById('endButton');
 const quizContainer = document.getElementById('quizzy');
 const timerElement = document.getElementById('timer');
 const scoreElement = document.getElementById('pointTotal');
+const initialsInput = document.getElementById('initialsInput');
+const submitButton = document.getElementById('submitButton');
+const pastElement = document.getElementById('pastScore');
 
 let currentQuestionIndex = 0;
 let score = 0;
-let timeLeft = 40; // Total time for the quiz in seconds
+let timeLeft = 90; // Total time for the quiz in seconds
 let timerInterval;
+let pastScores = [];
 
 // Function to display the current question
 function displayQuestion() {
@@ -85,6 +89,7 @@ function handleAnswerClick(event) {
 
     if (currentQuestionIndex < quiz.length) {
         displayQuestion();
+        scoreElement.textContent = `${score}`; 
     } else {
         endQuiz();
     }
@@ -94,6 +99,8 @@ function handleAnswerClick(event) {
 function startQuiz() {
     startButton.style.display = 'none';
     endButton.style.display = 'inline';
+    timerElement.textContent = '90';
+    scoreElement.textContent = '0';
     displayQuestion();
     timerInterval = setInterval(updateTimer, 1000);
 }
@@ -102,20 +109,42 @@ function startQuiz() {
 function endQuiz() {
     clearInterval(timerInterval);
     quizContainer.innerHTML = '<p>Quiz Completed!</p>';
-    scoreElement.textContent = `Final Score: ${score}`;
+    scoreElement.textContent = `${score}`;
+    endButton.style.display = 'none';
+    submitButton.style.display = 'inline';
+
 
     // Save the score to local storage
     localStorage.setItem('userScore', score);
 }
 
+
 // Function to update the timer
 function updateTimer() {
     timeLeft--;
-    timerElement.textContent = `Time Left: ${timeLeft} seconds`;
-
+    timerElement.textContent = `${timeLeft} seconds`;
     if (timeLeft <= 0) {
         endQuiz();
     }
+}
+// Function to save down quiz attempts
+function submitQuiz() {
+    const initials = initialsInput ;
+    if (initials === ''){
+        alert('Must save initials.');
+        return;
+    }
+
+    const quizAttempt = {
+        date: new Date().toLocaleString(),
+        initials: initials,
+        score: score
+    };
+
+    pastScores.push(quizAttempt);
+    
+    localStorage.setItem('pastScores', JSON.stringify(pastScores));
+
 }
 
 // Event listener for the start button
@@ -123,6 +152,21 @@ startButton.addEventListener('click', startQuiz);
 
 // Event listener for the end button
 endButton.addEventListener('click', endQuiz);
+
+// Event listener for submit button
+submitButton.addEventListener('click', submitQuiz);
+
+// Display Past Scores
+function displayPastScores() {
+    pastElement.innerHTML = '';
+    pastScores.forEach((attempt) => {
+        const scoreItem = document.createElement('div');
+        scoreItem.textContent = `${attempt.date} - ${attempt.initials}: ${attempt.score}`;
+        pastElement.appendChild(scoreItem);
+    });
+}
+
+displayPastScores();
 
 // Use local Storage to populate the final userScore
 window.addEventListener('load', function() {
@@ -133,7 +177,24 @@ window.addEventListener('load', function() {
     }
 });
 
+// Go get past saved scores 
+window.addEventListener('load', function() {
+    const savedAttempts = localStorage.getItem('quizAttempt');
+    if (savedAttempts !== null) {
+        quizAttempt = JSON.parse(quizAttempt);
+    }
+});
+
 // Clear local storage using event listener 'before unload' so that score doesn't persist when page is refreshed.
 window.addEventListener('beforeunload', function() {
     localStorage.removeItem('userScore');
+});
+
+// Retrieve past quiz attempts from local storage when the page loads
+window.addEventListener('load', function() {
+    const savedAttempts = localStorage.getItem('pastScores');
+    if (savedAttempts !== null) {
+        pastScores = JSON.parse(savedAttempts);
+        displayPastScores();
+    }
 });

@@ -17,6 +17,26 @@ h1 {
     color: crimson;   
 }
 
+.overview {
+  margin: 25px;
+  padding:10px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width:75%;
+  margin-left: 12.5%;
+}
+
+.scorecard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .start {
     background-color: midnightblue;
     border:0;

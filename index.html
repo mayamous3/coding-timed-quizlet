@@ -8,16 +8,28 @@
     <title>Coding Quizlet</title>
 </head>
 <body>
-    <h1>Test your knowledge.</h1>
-    <div class="quizlet" id="quizzy"></div> </div>
-    <button class="start" id="startButton">Start</button>
-    <button class="end" id="endButton">End</button>
+    <h1>JavaScript Coding Quiz</h1>
+    <p class="overview">This quiz will ask 5 questions about JavaScript. For each wrong answer, 10 points and 10 seconds are deducted from the player. Starting timer is 90 seconds and counting down. </p>
     <div class="scorecard" id="scoreCard">
-        <h3>Time Remaining</h3>
-        <div id="timer"> </div>
-        <h3>Accrued Point Total</h3>
-        <div id="pointTotal"> </div>
+        <div class="countDown">
+            <h3>Time Remaining: </h3>
+            <div id="timer"> </div>
+        </div>
+        <div class="pointCount">
+            <h3>Accrued Point Total: </h3>
+            <div id="pointTotal"> </div>
+        </div>
     </div>
+    <div class="quizlet" id="quizzy"> </div>
+    <div class="buttons">
+        <button class="start" id="startButton">Start</button>
+        <button class="end" id="endButton">End</button>
+    </div>
+    <div class="submitScore">
+    <input type="text" id="initialsInput" placeholder="Enter initials">
+    <button id="submitButton" style="display: none;">Submit Quiz</button>
+    </div>
+    <div id="pastScore"> </div>
     <script src="./assets/javascript/script.js"></script>
 </body>
 </html>
