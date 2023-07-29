@@ -17,7 +17,7 @@ h1 {
     color: crimson;   
 }
 
-.Start {
+.start {
     background-color: midnightblue;
     border:0;
     border-radius: 10px;
@@ -36,7 +36,7 @@ h1 {
     display: block;
   }
 
-  .End {
+  .end {
     background-color: midnightblue;
     border:0;
     border-radius: 10px;
