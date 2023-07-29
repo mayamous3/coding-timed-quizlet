@@ -43,7 +43,7 @@ const scoreElement = document.getElementById('pointTotal');
 
 let currentQuestionIndex = 0;
 let score = 0;
-let timeLeft = 60; // Total time for the quiz in seconds
+let timeLeft = 40; // Total time for the quiz in seconds
 let timerInterval;
 
 // Function to display the current question
@@ -75,7 +75,12 @@ function handleAnswerClick(event) {
         score += 20;
     } else {
         score -= 10;
-    }
+        timeLeft -= 10;
+            if (timeLeft < 0) {
+                timeLeft = 0; // Ensure that the timeLeft doesn't become negative
+             }
+            }
+
     currentQuestionIndex++;
 
     if (currentQuestionIndex < quiz.length) {

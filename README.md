@@ -22,6 +22,7 @@ THEN I can save my initials and my score
 - Quiz will cycle through 5 JavaScript Questions.
 - Quiz uses a timer.
 - Quiz adds 20 points for correct answers, and reduces by 10 points for wrong answers.
+- Time will be reduced by 10 seconds for each wrong answer.
 - Quiz allows player to save their score and initials at the end of the quiz.
 
 ## Sources
